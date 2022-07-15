@@ -1,0 +1,17 @@
+{
+    "name": "box",
+    "dockerFile": "Dockerfile",
+    "remoteUser" : "vs",
+    "runArgs": [
+        "--name=box",
+        "--hostname=box",
+        "--cap-add=SYS_PTRACE",
+        "--security-opt", "seccomp=unconfined",
+    ],
+    "extensions": [
+    ],
+    "containerEnv": {
+        "DISPLAY": "host.docker.internal:0.0",
+        "LIBGL_ALWAYS_INDIRECT": "0",
+    }
+}
