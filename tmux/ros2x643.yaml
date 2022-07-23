@@ -1,0 +1,27 @@
+session_name: ros2x643 # Sources ROS2 Foxy in 3 windows of 6, 4, and 3 panes - generic.
+shell_command_before:
+- 'source /opt/ros/foxy/setup.bash'
+windows:
+- window_name: p6
+  focus: True
+  layout: tiled
+  panes:
+  - focus: true
+  -  
+  - 
+  -
+  -
+  -
+- window_name: p4
+  layout: tiled
+  panes:
+  - focus: true
+  - 
+  - 
+  -
+- window_name: p3
+  layout: main-horizontal
+  panes:
+  - focus: true
+  - 
+  - 
