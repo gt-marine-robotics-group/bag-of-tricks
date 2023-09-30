@@ -1,0 +1,28 @@
+#!/bin/bash
+
+session="VRX"
+
+tmux has-session -t $session 2>/dev/null
+
+if [ $? != 0 ]; then
+
+tmux new-session -d -s $session 
+
+tmux rename-window -t 0 'Sim'
+tmux send-keys -t 'Sim' 'cd ~/mrg' C-m 'source vrx.bashrc' C-m 'ros2 launch vrx_gz competition.launch.py world:=sydney_regatta'
+
+tmux new-window -t $session:1 -n 'Virtuoso1'
+tmux send-keys -t 'Virtuoso1' 'cd ~/mrg/dev_ws' C-m 'source ~/ros2.bashrc' C-m 'source install/setup.bash' C-m
+
+tmux new-window -t $session:2 -n 'Virtuoso2'
+tmux send-keys -t 'Virtuoso2' 'cd ~/mrg/dev_ws' C-m 'source ~/ros2.bashrc' C-m 'source install/setup.bash' C-m
+
+tmux new-window -t $session:3 -n 'Helper1'
+tmux send-keys -t 'Helper1' 'source ~/ros2.bashrc' C-m
+
+tmux new-window -t $session:4 -n 'Helper2'
+tmux send-keys -t 'Helper2' 'source ~/ros2.bashrc' C-m
+
+fi
+
+tmux attach-session -t $session:0
