@@ -7,7 +7,7 @@ windows:
   layout: tiled
   panes:
   - focus: true
-  - 'source ~/Projects/microros_ws/install/local_setup.bash &&
+  - 'source /microros_ws/install/local_setup.bash &&
  ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/serial/by-id/usb-Teensyduino_USB_Serial_12689450-if00'
   - 
   -
