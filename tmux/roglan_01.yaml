@@ -7,7 +7,7 @@ windows:
   layout: tiled
   panes:
   - focus: true
-  - 'source /microros_ws/install/local_setup.bash &&
+  - 'source /root/mrg/microros_ws/install/local_setup.bash &&
  ros2 run micro_ros_agent micro_ros_agent multiserial --devs "/dev/serial/by-id/usb-Teensyduino_USB_Serial_13502140-if00 /dev/serial/by-id/usb-Arduino__www.arduino.org__Arduino_Due_Prog._Port_75439333235351F040F0-if00"'
   - 
   -
