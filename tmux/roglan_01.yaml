@@ -1,14 +1,14 @@
 session_name: fish_01 # Sources ROS2 Foxy in 3 windows of 6, 4, and 3 panes - generic.
 shell_command_before:
-- 'source /opt/ros/foxy/setup.bash && export ROS_DOMAIN_ID=12'
+- 'source /opt/ros/humble/setup.bash && export ROS_DOMAIN_ID=12'
 windows:
 - window_name: p6
   focus: True
   layout: tiled
   panes:
   - focus: true
-  - 'source ~/Projects/microros_ws/install/local_setup.bash &&
- ros2 run micro_ros_agent micro_ros_agent multiserial --devs "/dev/serial/by-id/usb-Teensyduino_USB_Serial_13502140-if00 /dev/serial/by-id/usb-Arduino__www.arduino.org__Arduino_Due_Prog._Port_75439333235351F040F0-if00"'
+  - 'source ~/mrg/microros_ws/install/local_setup.bash &&
+ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/serial/by-id/usb-Teensyduino_USB_Serial_12689450-if00'
   - 
   -
   -
