@@ -1,0 +1,29 @@
+session_name: fang_01 # Sources ROS2 Humble in 3 windows of 6, 4, and 3 panes - generic.
+shell_command_before:
+- 'source /opt/ros/humble/setup.bash'
+- 'export ROS_DOMAIN_ID=12'
+- 'source install/setup.bash'
+windows:
+- window_name: p6
+  focus: True
+  layout: tiled
+  panes:
+  - focus: true
+  - 'sudo chmod 777 /dev/serial/by-id/usb-Teensyduino_USB_Serial_15010960-if00 && source ~/mrg/microros_ws/install/local_setup.bash && ros2 run micro_ros_agent micro_ros_agent multiserial --devs "/dev/serial/by-id/usb-Teensyduino_USB_Serial_15010960-if00"'
+  -
+  -
+  -
+  -
+- window_name: p4
+  layout: tiled
+  panes:
+  - focus: true
+  -
+  -
+  -
+- window_name: p3
+  layout: main-horizontal
+  panes:
+  - focus: true
+  -
+  -
