@@ -1,0 +1,11 @@
+output_bags:
+  - uri: ros2_output
+    storage_id: mcap
+    storage_config_uri: db3_config.yaml
+
+    # Convert all topics
+    all: true
+
+    # Convert specific topics
+    #all: false
+    #topics: []
