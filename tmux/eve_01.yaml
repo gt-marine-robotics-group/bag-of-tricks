@@ -1,8 +1,8 @@
 session_name: eve_01 # Sources ROS2 Humble with commands preset for running the robosub base station
 shell_command_before:
-- 'source /opt/ros/humble/setup.bash';
-- 'export ROS_DOMAIN_ID=12';
-- 'source install/setup.bash';
+- 'source /opt/ros/humble/setup.bash'
+- 'export ROS_DOMAIN_ID=12'
+- 'source install/setup.bash'
 windows:
 - window_name: main
   focus: True
@@ -10,13 +10,6 @@ windows:
   panes:
     - shell_command: 
       - cmd: 'ros2 launch pontus_controller rc.launch.py'
-      enter: true
-    - shell_command: 
-      - cmd: 'rqt'
-      enter: false
-    - shell_command: 
-      - cmd: 'rviz2'
-      enter: false
     - shell_command: 
       focus: true
     - blank

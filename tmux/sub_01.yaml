@@ -1,60 +1,35 @@
 session_name: sub_01 # Sources ROS2 Humble with commands preset for running the robosub
 shell_command_before:
-- 'source /opt/ros/humble/setup.bash';
-- 'export ROS_DOMAIN_ID=12';
-- 'source install/setup.bash';
+- 'source /opt/ros/humble/setup.bash'
+- 'export ROS_DOMAIN_ID=12'
+- 'source install/setup.bash'
 windows:
 - window_name: main
   focus: True
   layout: tiled
   panes:
     - shell_command: 
-      - cmd: 'ros2 run pontus_controller autonomy_manual_vel_control'
+      - 'ros2 run pontus_controller autonomy_manual_vel_control'
       supress_history: false
     - shell_command: 
-      - cmd: 'sudo chmod 777 /dev/serial/by-id/usb-Teensyduino_USB_Serial_15010960-if00 && source ~/mrg/microros_ws/install/local_setup.bash && ros2 run micro_ros_agent micro_ros_agent multiserial --devs "/dev/serial/by-id/usb-Teensyduino_USB_Serial_15010960-if00"'
-      enter: true 
+      - 'sudo chmod 777 /dev/serial/by-id/usb-Teensyduino_USB_Serial_15010960-if00 && source ~/mrg/microros_ws/install/local_setup.bash && ros2 run micro_ros_agent micro_ros_agent multiserial --devs "/dev/serial/by-id/usb-Teensyduino_USB_Serial_15010960-if00"'
       supress_history: false
-    - shell_command: 
-      - cmd: 'ros2 launch pontus_autonomy auv.launch.py'
-      enter: false
-      supress_history: true
-    - shell_command: 
-      - cmd: 'ros2 launch pontus_autonomy yolo.launch.py'
-      enter: false
-      supress_history: true
-    - shell_command: 
-      - cmd: 'ros2 launch pontus_autonomy autonomy.launch.py'
-      enter: false
-      supress_history: true
-    - shell_command:
-      focus: true
+    - blank
+    - blank
+    - blank
+    - blank
 - window_name: sensors
   layout: tiled
   panes:
-    - shell_command: 
-      - cmd: 'ros2 launch pontus_sensors low_light.launch.py'
-      enter: false
-      supress_history: false
-    - shell_command: 
-      - cmd: 'ros2 launch pontus_sensors dvl.launch.py'
-      enter: false
-      supress_history: false
-    - shell_command:
-      focus: true
+    - blank
+    - blank
+    - blank
     - blank
 - window_name: etc
-  layout: main-horizontal
+  layout: tiled
   panes:
-    - shell_command: 
-      - cmd: 'ros2 launch pontus_bringup direct_auv.launch.py auv:=auv'
-      enter: false
-      supress_history: false
-    - shell_command:
-      focus: true
-    - shell_command:
-      - cmd: 'ros2 run pontus_bringup record_all_topics.sh'
-      enter: false
-      supress_history: false
     - blank
     - blank
+    - blank
+    - shell_command:
+      - setsid ./tmux_sub_setup.sh
