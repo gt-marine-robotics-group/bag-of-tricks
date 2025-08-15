@@ -32,4 +32,4 @@ windows:
     - blank
     - blank
     - shell_command:
-      - setsid ./tmux_sub_setup.sh
+      - setsid ../bag-of-tricks/tmux/tmux_sub_setup.sh
